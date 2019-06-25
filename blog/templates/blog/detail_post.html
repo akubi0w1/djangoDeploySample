@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div><a href="{% url 'home' %}">< back</a></div>
+
+<h1>{{ post.title }}</h1>
+<h4>{{ post.author }}</h4>
+<h5>{{ post.created_date }}</h5>
+<div>
+    {{ post.text }}
+</div>
+
+{% if post.photo != "defo" %}
+<div><img src="{{ post.photo.url }}"></div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <div style="margin-bottom: 10px;">
+    {{ form.title.label }}
+    {{ form.title }}
+    </div>
+
+    <div>
+    {{ form.text.label }}
+    {{ form.text }}
+    </div>
+
+    <div>
+        {{ form.photo }}
+        <!--<input type="file" name="phone" accept="image/*" id="id_image" style="font-size: 16px;">-->
+    </div>
+
+    <input type="submit" value="保存">
+
+</form>
+
+
+{% endblock %}
