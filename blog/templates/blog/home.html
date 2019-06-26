@@ -1,12 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<h2>blog</h2>
-<div style="margin-bottom: 20px;"><a href="{% url 'new' %}">New</a></div>
+    <h2>blog</h2>
+    <div style="margin-bottom: 20px;"><a href="{% url 'new' %}">New</a></div>
 
-{% for post in posts %}
-<div style="border-bottom: 2px solid #ddd;">
-    <a href="{% url 'detail' pk=post.pk %}" style="color: green;">{{ post.title }}</a>
-</div>
-{% endfor %}
+    {% for post in posts %}
+    <div style="border-bottom: 2px solid #ddd;">
+        <a href="{% url 'detail' pk=post.pk %}" style="color: green;">{{ post.title }}</a>
+    </div>
+    {% endfor %}
 {% endblock %}
